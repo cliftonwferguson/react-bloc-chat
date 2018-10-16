@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import * as firebase from 'firebase';
+import RoomList from './components/RoomList'
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCWLBiSoaq8YaMw4IomVYtuYQunH_oz2oo",
@@ -20,7 +21,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>this.state.rooms.map(snapshot.key)</p>
+          <RoomList firebase={firebase}/>
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
