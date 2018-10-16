@@ -20,6 +20,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <p>this.state.rooms.map(snapshot.key)</p>
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
