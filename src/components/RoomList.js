@@ -25,7 +25,7 @@ class RoomList extends Component {
  }
  render () {
    return (
-     <ul>{this.state.rooms.map( (room) => return () )}</ul>
+     <ul>{this.state.rooms.map( (room) => (<li>{room.name}</li>))}</ul>
    )
  }
 }
