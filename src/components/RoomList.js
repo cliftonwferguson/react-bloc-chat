@@ -11,10 +11,10 @@ class RoomList extends Component {
 
 
     this.roomsRef = this.props.firebase.database().ref('rooms');
-
-
- }
-
+    }
+    this.roomsRef.push({
+      name. newRoomName
+    });
 
  componentDidMount() {
    this.roomsRef.on('child_added', snapshot => {
@@ -27,6 +27,7 @@ class RoomList extends Component {
    return (
      <ul>{this.state.rooms.map( (room) => (<li>{room.name}</li>))}</ul>
    )
+     
  }
 }
 
