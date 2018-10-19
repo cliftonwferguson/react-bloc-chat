@@ -42,37 +42,19 @@ class RoomList extends Component {
         });
     }
 
-    render() {
-            return ( <
-                    div >
-                    <
-                    form onSubmit = {
-                        (event) => this.newChatRoom(event)
-                    } >
-                    <
-                    label >
-                    Name:
-                    <
-                    input type = "text"
-                    value = {
-                        this.state.newroom
-                    }
-                    onChange = {
-                        (e) => this.handleChange(e)
-                    }
-                    /> <
-                    /label> <
-                    input type = "submit"
-                    value = "Submit" / >
-                    <
-                    /form> <
-                    ul > {
-                        this.state.rooms.map(room => < li > {
-                                room.name
-                            } < /li>)}</ul >
-                            <
-                            /div>
-                        );
+    render () {
+   return (
+    <div>
+     <form onSubmit={(event) => this.newChatRoom(event)}>
+     <label>
+       Name:
+       <input type="text" value={this.state.newroom} onChange={(e) => this.handleChange(e)} />
+     </label>
+     <input type="submit" value="Submit" />
+   </form>
+     <ul>{this.state.rooms.map( room => <li>{room.name}</li>)}</ul>
+    </div>
+   );
 
                     }
 
