@@ -22,7 +22,8 @@ constructor (props) {
 
 componentDidMount() {
   this.roomsRef.on('child_added', snapshot => {
-    const room = {name: snapshot.val(), key: snapshot.key}
+    const room = snapshot.val();
+    room.key = snapshot.key;
 
     this.setState({ rooms: this.state.rooms.concat( room ) })
   });
@@ -33,11 +34,12 @@ componentDidMount() {
 
   }
 
-  newChatRoom() {
+  newChatRoom(event) {
     event.preventDefault();
     this.roomsRef.push({
       name: this.state.newroom
   });
+  this.setState({newroom: ""});
 }
 
 render () {
@@ -46,7 +48,7 @@ render () {
     <form onSubmit={(event) => this.newChatRoom(event)}>
     <label>
       Name:
-      <input type="text" value={this.state.newroom} onChange={(e) => this.handleChange(e)} />
+      <input type="text"  value={this.state.newroom} placeholder="Chat room name" onChange={ this.handleChange.bind(this) } />
     </label>
     <input type="submit" value="Submit" />
   </form>
