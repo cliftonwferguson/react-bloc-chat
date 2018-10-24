@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import * as firebase from 'firebase';
 import RoomList from './components/RoomList'
+import MessageList from './components/MessageList'
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCWLBiSoaq8YaMw4IomVYtuYQunH_oz2oo",
@@ -22,6 +23,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <RoomList firebase={firebase}/>
+          <MessageList firebase={firebase}/>
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
