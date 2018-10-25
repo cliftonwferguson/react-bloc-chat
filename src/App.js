@@ -16,14 +16,29 @@ import MessageList from './components/MessageList'
   firebase.initializeApp(config);
 
 
+
+
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      activeRoom: null,
+    };
+  }
+
+  handleClick (room) {
+   this.setState({
+     activeRoom: room
+   })
+ }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <RoomList firebase={firebase}/>
-          <MessageList firebase={firebase}/>
+          <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setroom= {(e) => this.handleClick (e)}/>
+          <MessageList firebase={firebase} activeRoom={this.state.activeRoom} setroom= {(e) => this.handleClick (e)} />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
