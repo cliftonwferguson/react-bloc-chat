@@ -52,7 +52,7 @@ render () {
     </label>
     <input type="submit" value="Submit" />
   </form>
-    <ul>{this.state.rooms.map( room => <li onClick={(e) => this.props.setroom(room)}>{room.name}</li>)}</ul>
+    <ul>{this.state.rooms.map( room => <li onClick={(e) => this.props.handleClick(room)}>{room.name}</li>)}</ul>
    </div>
   );
 
