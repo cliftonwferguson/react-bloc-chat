@@ -28,7 +28,8 @@ class App extends Component {
 
   handleClick (room) {
    this.setState({
-     activeRoom: room
+     activeRoom: room,
+     console.log('Hello'),
    })
  }
 
