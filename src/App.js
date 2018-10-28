@@ -28,9 +28,9 @@ class App extends Component {
 
   handleClick (room) {
    this.setState({
-     activeRoom: room,
-     console.log('Hello'),
-   })
+     activeRoom: room
+
+   })   console.log('Hello')
  }
 
   render() {
