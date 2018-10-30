@@ -22,7 +22,7 @@ class MessageList extends Component {
  render() {
   return(
     <div>
-     <ul>{this.state.message.map( message => <li>{message.roomId} :: {message.content}</li>)}</ul>
+     <ul>{this.state.message.filter( message => message.roomId === this.props.activeRoom.id).map( message => <li>{message.roomId} :: {message.content}</li>)}</ul>
   </div>
 
   );
