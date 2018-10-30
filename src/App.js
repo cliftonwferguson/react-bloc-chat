@@ -39,7 +39,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setroom= {(e) => this.handleClick (e)}/>
-          <MessageList firebase={firebase} activeRoom={this.state.activeRoom} setroom= {(e) => this.handleClick (e)} />
+          <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
