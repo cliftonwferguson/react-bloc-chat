@@ -30,7 +30,7 @@ class App extends Component {
    this.setState({
      activeRoom: room
 
-   })   console.log('Hello')
+   });   console.log('Hello')
  }
 
   render() {
