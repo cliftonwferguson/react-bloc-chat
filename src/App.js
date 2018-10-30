@@ -22,7 +22,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      activeRoom: null,
+      activeRoom: "",
     };
   }
 
@@ -30,7 +30,7 @@ class App extends Component {
    this.setState({
      activeRoom: room
 
-   });   console.log('Hello')
+   });
  }
 
   render() {
