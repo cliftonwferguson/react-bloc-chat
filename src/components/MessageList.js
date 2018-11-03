@@ -19,9 +19,25 @@ class MessageList extends Component {
    });
  }
 
+   newMessage(event) {
+     event.preventDefault();
+    this.messageRef.push({
+      name: this.state.newMessage
+    });
+     this.setState({newmessage: "" });
+   }
+
+
  render() {
   return(
     <div>
+    <form onSubmit={(event) => this.newMessage(event)}>
+     <label>
+       Message:
+         <textarea></textarea>
+    </label>
+        <input type='submit' />
+    </form>
      <ul>{this.state.message.filter( message => message.roomId === this.props.activeRoom.key).map( message => <li>{message.content}</li>)}</ul>
   </div>
 
