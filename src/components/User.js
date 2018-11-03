@@ -23,7 +23,7 @@ handleLogOut() {
     return(
 
       <div>
-      <header>{this.props.user ? this.props.user.displayName : "vacant"} </header>
+      <header>{this.props.user ? this.props.user.displayName : "Guest"} </header>
     <button onClick={this.handleSignIn.bind(this)}>Login
     </button>
 
