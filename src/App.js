@@ -47,9 +47,9 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <User firebase={firebase}/>
+          <User firebase={firebase} setUser={this.setUser.bind(this)} user={this.state.user}/>
 
-          <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setroom= {(e) => this.handleClick (e)}/>
+          <RoomList firebase={firebase} activeRoom={this.state.activeRoom}/>
           <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />
           <p>
             Edit <code>src/App.js</code> and save to reload.

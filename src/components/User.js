@@ -21,7 +21,9 @@ handleLogOut() {
 
   render() {
     return(
+
       <div>
+      <header>{this.props.user ? this.props.user.displayName : "vacant"} </header>
     <button onClick={this.handleSignIn.bind(this)}>Login
     </button>
 
