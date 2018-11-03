@@ -22,10 +22,14 @@ class MessageList extends Component {
    newMessage(event) {
      event.preventDefault();
     this.messageRef.push({
-      name: this.state.newMessage
-    });
+      username: this.props.user
+      content: this.state.newMessage,
+      sentAt: firebase.database.ServerValue.TIMESTAMP,
+      roomId: this.props.activeRoom.Key,
+     });
      this.setState({newmessage: "" });
    }
+
 
 
  render() {
