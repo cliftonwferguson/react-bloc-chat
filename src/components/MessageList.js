@@ -22,7 +22,7 @@ class MessageList extends Component {
    newMessage(event) {
      event.preventDefault();
     this.messageRef.push({
-      username: this.props.user
+      username: this.props.user,
       content: this.state.newMessage,
       sentAt: firebase.database.ServerValue.TIMESTAMP,
       roomId: this.props.activeRoom.Key,
@@ -34,6 +34,7 @@ class MessageList extends Component {
 
  render() {
   return(
+    console.log(this.props.user),
     <div>
     <form onSubmit={(event) => this.newMessage(event)}>
      <label>
