@@ -23,7 +23,7 @@ constructor (props) {
 componentDidMount() {
   this.roomsRef.on('child_added', snapshot => {
     const room = snapshot.val();
-    room.key = this.props.activeRoom.key;
+    room.key = snapshot.key;
 
     this.setState({ rooms: this.state.rooms.concat( room ) })
   });

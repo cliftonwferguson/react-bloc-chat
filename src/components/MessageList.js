@@ -22,19 +22,22 @@ class MessageList extends Component {
    newMessage(event) {
      event.preventDefault();
     this.messageRef.push({
-      username: this.props.user,
+      username: this.props.user.displayName,
       content: this.state.newMessage,
       sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
       roomId: this.props.activeRoom.Key,
      });
-     this.setState({newmessage: "" });
+     this.setState({newMessage: "" });
    }
 
 
 
  render() {
+   console.log(this.state.message);
+   console.log(this.state.message.filter( message => message.roomId === this.props.activeRoom.key));
+   console.log(this.props.activeRoom);
   return(
-    console.log(this.props.user),
+
     <div>
     <form onSubmit={(event) => this.newMessage(event)}>
      <label>

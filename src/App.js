@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import User from "./components/User"
 import './App.css';
 import * as firebase from 'firebase';
 import RoomList from './components/RoomList'
 import MessageList from './components/MessageList'
-import User from './components/User'
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCWLBiSoaq8YaMw4IomVYtuYQunH_oz2oo",
@@ -24,7 +23,7 @@ class App extends Component {
     super(props);
     this.state = {
       activeRoom: "",
-      user: null,
+      user: null
     };
   }
 
@@ -35,22 +34,19 @@ class App extends Component {
    });
  }
 
-  setUser (user) {
+ setUser (user) {
    this.setState({
      user: user
    });
-
-  }
-
+ }
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <User firebase={firebase} setUser={this.setUser.bind(this)} user={this.state.user}/>
-
-          <RoomList firebase={firebase} activeRoom={this.state.activeRoom}/>
-          <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />
+        <User firebase={firebase} user={this.state.user} setUser={this.setUser.bind(this)}/>
+          <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setroom= {this.handleClick.bind(this)}/>
+          <MessageList firebase={firebase} activeRoom={this.state.activeRoom} user={this.state.user} />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
