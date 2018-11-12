@@ -42,11 +42,11 @@ class MessageList extends Component {
    console.log(this.state.message.filter( message => message.roomId === this.props.activeRoom.key));
    console.log(this.props.activeRoom);
   return(
-
-    <div>
+   <div>
+    <form onSubmit={(event) => this.newMessage(event)}>
     <input type="text" value={this.state.newMessage} placeholder="New Chat Message" onChange={this.handleChange.bind(this)} />
     <input type='submit' />
-
+    </form>
      <ul>{this.state.message.filter( message => message.roomId === this.props.activeRoom.key).map( message => <li>{message.content}</li>)}</ul>
   </div>
 
