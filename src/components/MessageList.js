@@ -27,10 +27,10 @@ class MessageList extends Component {
    newMessage(event) {
      event.preventDefault();
     this.messageRef.push({
-      username: this.props.user.displayName,
+      username: (this.props.user ? this.props.user.displayName : 'Guest'),
       content: this.state.newMessage,
       sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
-      roomId: this.props.activeRoom.key,
+      roomId: this.props.activeRoom.key
      });
      this.setState({newMessage: "" });
    }
@@ -47,7 +47,7 @@ class MessageList extends Component {
     <input type="text" value={this.state.newMessage} placeholder="New Chat Message" onChange={this.handleChange.bind(this)} />
     <input type='submit' />
     </form>
-     <ul>{this.state.message.filter( message => message.roomId === this.props.activeRoom.key).map( message => <li>{message.content}</li>)}</ul>
+     <ul>{this.state.message.filter( message => message.roomId === this.props.activeRoom.key).map( message => <li>{message.username}: {message.content}</li>)}</ul>
   </div>
 
   );
